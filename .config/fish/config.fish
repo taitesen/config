@@ -1,5 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    set fish_greeting
+
     zoxide init fish | source
     starship init fish | source
 
@@ -8,7 +10,6 @@ if status is-interactive
     alias lt='eza -lT --color=always --icons=always'
     alias ls='eza --color=always --icons=always'
     alias la='eza -a --color=always --icons=always'
-
-    set -g fish_greeting
+    alias open='img2sixel'
 
 end

@@ -1,0 +1,76 @@
+add_newline = false
+format = """$username\
+$directory\
+$character"""
+palette = "catppuccin_mocha"
+right_format = """$all"""
+
+[username]
+show_always = true
+style_user = "yellow bold"
+style_root = "white bold"
+format = "[$user]($style)"
+
+[character]
+format = "[$symbol]($style)"
+success_symbol = "[  ](green)"
+error_symbol = "[  ](red)"
+
+[cmd_duration]
+style = "bold yellow"
+min_time = 500
+show_milliseconds = false
+format = "took [$duration]($style)"
+
+[directory]
+home_symbol = " "
+truncation_length = 0
+truncation_symbol = "../"
+style = "blue"
+format = "[$path]($style)"
+
+[c]
+style = "cyan"
+symbol = " "
+detect_extensions = ['c', 'h']
+format = "via [$symbol($version(-$name))]($style)"
+
+[custom.cpp]
+style = "cyan"
+symbol = " "
+detect_extensions = ['cpp']
+format = "via [$symbol($version(-$name))]($style)"
+
+[python]
+style = "cyan"
+symbol = " "
+detect_extensions = ['py']
+format = "via [$symbol($version(-$name))]($style)"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
