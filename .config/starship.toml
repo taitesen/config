@@ -1,51 +1,53 @@
 add_newline = false
-format = """$username\
+format = """
+$username\
 $directory\
-$character"""
+$character\
+"""
 palette = "catppuccin_mocha"
 right_format = """$all"""
 
-[username]
-show_always = true
-style_user = "yellow bold"
-style_root = "white bold"
-format = "[$user]($style)"
-
 [character]
 format = "[$symbol]($style)"
-success_symbol = "[  ](green)"
-error_symbol = "[  ](red)"
+success_symbol = "[  ](green)"
+error_symbol = "[  ](red)"
 
-[cmd_duration]
-style = "bold yellow"
-min_time = 500
-show_milliseconds = false
-format = "took [$duration]($style)"
+[username]
+show_always = true
+style_root = "white bold"
+style_user = "yellow bold"
+format = " [$user]($style)"
 
 [directory]
-home_symbol = " "
+home_symbol = " ~"
 truncation_length = 0
 truncation_symbol = "../"
 style = "blue"
 format = "[$path]($style)"
 
+[directory.substitutions]
+'~/development' = 'web-development'
+'~/dotfiles' = 'dotfiles-git'
+'~/taitesen' = 'workspaces'
+
 [c]
 style = "cyan"
 symbol = " "
-detect_extensions = ['c', 'h']
+detect_extensions = ['c', 'h', 'cpp']
 format = "via [$symbol($version(-$name))]($style)"
 
-[custom.cpp]
-style = "cyan"
-symbol = " "
-detect_extensions = ['cpp']
-format = "via [$symbol($version(-$name))]($style)"
 
 [python]
 style = "cyan"
 symbol = " "
 detect_extensions = ['py']
 format = "via [$symbol($version(-$name))]($style)"
+
+[cmd_duration]
+style = "bold yellow"
+min_time = 500
+show_milliseconds = false
+format = " took [$duration]($style)"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
