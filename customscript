@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then
+  echo "The script requires exactly one arguments.Retry!!"
+  exit 1
+fi
+
+if [ -d $1 ]
+then
+	echo "$1 already existed!! Choose another name"
+fi
+
+if [ ! -d $1 ]
+then
+mkdir -p $1 && cd $1 && echo "#include<stdio.h>
+
+int main(){
+return 0;
+}" > main.c  && nvim +3 main.c
+fi
