@@ -19,10 +19,10 @@ style_user = "yellow bold"
 format = " [$user]($style)"
 
 [directory]
-home_symbol = " "
+home_symbol = ""
 truncation_length = 5
 # truncation_symbol = "  "
-truncation_symbol = "  "
+truncation_symbol = " "
 style = "cyan"
 format = "[$path]($style)"
 
