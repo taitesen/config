@@ -1,5 +1,21 @@
 return {
   {
+    "mbbill/undotree",
+    lazy = false,
+    config = function()
+      vim.keymap.set("n", "<C-u>", vim.cmd.UndotreeToggle)
+    end,
+  },
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    "ThePrimeagen/harpoon",
+    config = function()
+      require("telescope").load_extension "harpoon"
+    end,
+  },
+  {
     "michaelrommel/nvim-silicon",
     lazy = true,
     cmd = "Silicon",

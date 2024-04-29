@@ -7,6 +7,7 @@ local M = {}
 M.ui = {
   theme = "catppuccin",
   transparency = true,
+  telescope = { style = "bordered" },
 
   hl_override = {
     Comment = { italic = true },
