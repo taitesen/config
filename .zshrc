@@ -8,14 +8,20 @@ export BROWSER="firefox-developer-edition"
 
 ZSH_THEME="agnoster"
 
+# Add to .zshrc, before this plugin is loaded:
+# Use Control-D instead of Escape to switch to NORMAL mode
+VIM_MODE_VICMD_KEY='jk'
+
 plugins=( 
     git
     archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-vim-mode
 )
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # Check archlinux plugin commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
@@ -41,11 +47,12 @@ source $ZSH/oh-my-zsh.sh
 #
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 
 alias ld='eza -lf --color=always --icons=always'
 alias ll='eza -l --group-directories-first --color=always --icons=always '
-alias lt='eza -lT --group-directories-first --color=always --icons=always '
+alias lt='eza -xT --group-directories-first --color=always --icons=always '
 alias ls='eza -x --color=always --icons=always'
 alias la='eza -aG --sort=modified --group-directories-first --color=always --icons=always'
 alias tree='lt'
