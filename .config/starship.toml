@@ -1,5 +1,6 @@
 add_newline = false
 format = """
+[ ](mauve)\
 $username\
 $directory\
 $character\
@@ -9,48 +10,45 @@ right_format = """$all"""
 
 [character]
 format = "[$symbol]($style)"
-success_symbol = "[  ](green)"
-error_symbol = "[  ](red)"
+success_symbol = "[  ](sky)"
+error_symbol = "[  ](maroon)"
 
 [username]
 show_always = true
 style_root = "white bold"
-style_user = "yellow bold"
-format = " [$user]($style)"
+style_user = "mauve"
+format = "[$user]($style)"
 
 [directory]
 home_symbol = ""
 truncation_length = 5
-# truncation_symbol = "  "
-truncation_symbol = " "
-style = "cyan"
+truncation_symbol = "   "
+style = "overlay1"
 format = "[$path]($style)"
 
 [directory.substitutions]
-'development' = '  '
-'taitesen' = ' 󰨞 '
-'Music' = ' 󰝚 '
-'Videos' = '  '
-'dotfiles' = '  '
-'Documents' = ' 󰈙'
-'Pictures' = '  '
-'Downloads' = '  '
+'Music' = ' 󰝚  '
+'Videos' = '   '
+'dotfiles' = '   '
+'Documents' = ' 󰈙 '
+'Pictures' = '   '
+'Downloads' = '   '
 
 [c]
-style = "cyan"
+style = "green"
 symbol = " "
 detect_extensions = ['c', 'h', 'cpp']
 format = "via [$symbol($version(-$name))]($style)"
 
 
 [python]
-style = "cyan"
+style = "green"
 symbol = " "
 detect_extensions = ['py']
 format = "via [$symbol($version(-$name))]($style)"
 
 [cmd_duration]
-style = "bold yellow"
+style = "maroon"
 min_time = 500
 show_milliseconds = false
 format = " took [$duration]($style)"
