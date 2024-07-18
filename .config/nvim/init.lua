@@ -24,6 +24,7 @@ require("lazy").setup({
       require "options"
     end,
   },
+  change_detection = { notify = false },
 
   { import = "plugins" },
 }, lazy_config)

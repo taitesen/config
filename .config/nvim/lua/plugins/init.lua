@@ -3,7 +3,7 @@ return {
     "mbbill/undotree",
     lazy = false,
     config = function()
-      vim.keymap.set("n", "<C-u>", vim.cmd.UndotreeToggle)
+      vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     end,
   },
   {
@@ -22,19 +22,33 @@ return {
     init = function()
       local wk = require "which-key"
       wk.register({
-        ["<leader>sc"] = { ":Silicon<CR>", "Snapshot Code" },
-      }, { mode = "v" })
+        ["s"] = {
+          name = "Silicon",
+          ["s"] = {
+            function()
+              require("nvim-silicon").shoot()
+            end,
+            "Create code screenshot",
+          },
+          ["f"] = {
+            function()
+              require("nvim-silicon").file()
+            end,
+            "Save code screenshot as file",
+          },
+          ["c"] = {
+            function()
+              require("nvim-silicon").clip()
+            end,
+            "Copy code screenshot to clipboard",
+          },
+        },
+      }, { prefix = "<leader>", mode = "v" })
     end,
     config = function()
-      require("silicon").setup {
+      require("nvim-silicon").setup {
         font = "JetBrainsMono Nerd Font=34;Noto Color Emoji=34",
       }
-    end,
-  },
-  {
-    "rmagatti/auto-session",
-    config = function()
-      require "configs.auto-session"
     end,
   },
   {

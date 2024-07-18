@@ -3,12 +3,8 @@ require "nvchad.mappings"
 require("telescope").load_extension "harpoon"
 
 -- add yours here
-
 local map = vim.keymap.set
-map("n", ";", ":")
 map("i", "jk", "<ESC>")
-
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- vim-tmux-navigator
 map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
@@ -16,13 +12,12 @@ map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "window right" })
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "window above" })
 
--- auto-sessions
-map("n", "<leader>sr", "<cmd>SessionRestore<CR>", { desc = "[S]ession [R]estored for cwd" })
-map("n", "<leader>ss", "<cmd>SessionSave<CR>", { desc = "[S]ession [S]ave for auto session root dir" })
+-- screenshot
+-- map("v", "ss", "<cmd>Silicon<CR>", { desc = "screenshot" })
 
 -- quickfix navigation
-map("n", ";qn", "<cmd>cnext<CR>", { desc = "jump to [q]uickfix list [n]ext" })
-map("n", ";qp", "<cmd>cprev<CR>", { desc = "jump to [q]uickfix list [p]revious" })
+map("n", "sj", "<cmd>cnext<CR>", { desc = "jump to [q]uickfix list [n]ext" })
+map("n", "sk", "<cmd>cprev<CR>", { desc = "jump to [q]uickfix list [p]revious" })
 
 -- easy move lines in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv")

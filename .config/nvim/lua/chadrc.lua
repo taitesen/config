@@ -6,7 +6,7 @@ local M = {}
 
 M.ui = {
   theme = "catppuccin",
-  transparency = true,
+  transparency = false,
   telescope = { style = "bordered" },
 
   hl_override = {
