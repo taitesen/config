@@ -21,27 +21,27 @@ return {
     cmd = "Silicon",
     init = function()
       local wk = require "which-key"
-      wk.register({
-        ["s"] = {
-          name = "Silicon",
-          ["s"] = {
-            function()
-              require("nvim-silicon").shoot()
-            end,
-            "Create code screenshot",
-          },
-          ["f"] = {
-            function()
-              require("nvim-silicon").file()
-            end,
-            "Save code screenshot as file",
-          },
-          ["c"] = {
-            function()
-              require("nvim-silicon").clip()
-            end,
-            "Copy code screenshot to clipboard",
-          },
+      wk.add({
+        {
+          "<leader>ss",
+          function()
+            require("nvim-silicon").shoot()
+          end,
+          desc = "Create code screenshot",
+        },
+        {
+          "<leader>sf",
+          function()
+            require("nvim-silicon").file()
+          end,
+          desc = "Save code screenshot as file",
+        },
+        {
+          "<leader>sc",
+          function()
+            require("nvim-silicon").clip()
+          end,
+          desc = "Copy code screenshot to clipboard",
         },
       }, { prefix = "<leader>", mode = "v" })
     end,
